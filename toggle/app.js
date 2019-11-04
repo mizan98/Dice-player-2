@@ -12,7 +12,6 @@ resetButton.style.visibility = 'hidden';
 let randomRoll;
 
 gameRestart = () => {
-    // you can comment playerOne = true out if you want... don't worry.
     playerOne = true;
     playerOneScore = 0;
     playerTwoScore = 0;
