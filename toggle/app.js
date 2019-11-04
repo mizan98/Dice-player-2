@@ -12,6 +12,7 @@ resetButton.style.visibility = 'hidden';
 let randomRoll;
 
 gameRestart = () => {
+    // you can comment playerOne = true out if you want... don't worry.
     playerOne = true;
     playerOneScore = 0;
     playerTwoScore = 0;
@@ -25,25 +26,20 @@ gameLogic = () => {
         if (playerOne) {
             alert(`Player one, you have lost.`)
             resetButton.style.visibility = 'visible';
-            rollButton.style.visibility = "hidden"
         }
         else {
             alert(`Player two, you have lost.`)
             resetButton.style.visibility = 'visible';
-            rollButton.style.visibility = "hidden"
         }
     }
     else if (playerOneScore > 20 || playerTwoScore > 20) {
         if (playerOne) {
             alert(`Player one, you have won. Shame.`)
             resetButton.style.visibility = 'visible';
-            rollButton.style.visibility = "hidden"
-
         }
         else {
             alert(`Player two, you have won. Woo.`)
             resetButton.style.visibility = 'visible';
-            rollButton.style.visibility = "hidden"
         }
 
     }
@@ -56,7 +52,7 @@ gameLogic = () => {
 playerToggle = () => {
 
     randomRoll = Math.floor(Math.random() * 6) + 1;
-    gameLogic();
+   
 
     if (playerOne) {
         // alert("It is player one's turn.");
@@ -64,16 +60,16 @@ playerToggle = () => {
         // playerOneScore = playerOneScore + randomRoll;
         console.log(randomRoll);
         playerOneScore++
-        alert(`This is player one's score: ${playerOneScore}`);
-        // because it is true... player one has made it's turn... now make it player
-        // two's turn with the line below.
+        document.getElementsByClassName("player-score").innerHTML = `${playerOneScore}`
+        gameLogic();
         playerOne = false;
     } else {
         // alert("It is player two's turn.");
         playerTwoScore += randomRoll;
         console.log(randomRoll);
         playerTwoScore++
-        alert(`This is player two's score: ${playerTwoScore}`);
+        gameLogic();
+        document.getElementsByClassName("player-score").innerHTML = `${playerTwoScore}`
         playerOne = true;
     }
     
