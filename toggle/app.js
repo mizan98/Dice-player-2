@@ -25,20 +25,25 @@ gameLogic = () => {
         if (playerOne) {
             alert(`Player one, you have lost.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = "hidden"
         }
         else {
             alert(`Player two, you have lost.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = "hidden"
         }
     }
     else if (playerOneScore > 20 || playerTwoScore > 20) {
         if (playerOne) {
             alert(`Player one, you have won. Shame.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = "hidden"
+
         }
         else {
             alert(`Player two, you have won. Woo.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = "hidden"
         }
 
     }
