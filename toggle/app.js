@@ -12,11 +12,14 @@ resetButton.style.visibility = 'hidden';
 let randomRoll;
 
 gameRestart = () => {
-    // you can comment playerOne = true out if you want... don't worry.
     playerOne = true;
     playerOneScore = 0;
+    document.getElementById("player-score").innerHTML = `${playerOneScore}`;
     playerTwoScore = 0;
+    document.getElementById("player-2-score").innerHTML = `${playerTwoScore}`;
     resetButton.style.visibility = 'hidden';
+    rollButton.style.visibility = 'visible';
+
 }
 
 gameLogic = () => {
@@ -26,20 +29,24 @@ gameLogic = () => {
         if (playerOne) {
             alert(`Player one, you have lost.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = 'hidden'
         }
         else {
             alert(`Player two, you have lost.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = 'hidden'
         }
     }
     else if (playerOneScore > 20 || playerTwoScore > 20) {
         if (playerOne) {
             alert(`Player one, you have won. Shame.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = 'hidden'
         }
         else {
             alert(`Player two, you have won. Woo.`)
             resetButton.style.visibility = 'visible';
+            rollButton.style.visibility = 'hidden'
         }
 
     }
@@ -52,19 +59,17 @@ gameLogic = () => {
 playerToggle = () => {
 
     randomRoll = Math.floor(Math.random() * 6) + 1;
-   
+    console.log(randomRoll)
 
     if (playerOne) {
         playerOneScore += randomRoll;
         console.log(randomRoll);
-        playerOneScore++
         document.getElementById("player-score").innerHTML = `${playerOneScore}`
         gameLogic();
         playerOne = false;
     } else {
         playerTwoScore += randomRoll;
         console.log(randomRoll);
-        playerTwoScore++
         gameLogic();
         document.getElementById("player-2-score").innerHTML = `${playerTwoScore}`
         playerOne = true;
