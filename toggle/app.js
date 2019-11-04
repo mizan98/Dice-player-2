@@ -55,16 +55,13 @@ playerToggle = () => {
    
 
     if (playerOne) {
-        // alert("It is player one's turn.");
         playerOneScore += randomRoll;
-        // playerOneScore = playerOneScore + randomRoll;
         console.log(randomRoll);
         playerOneScore++
         document.getElementsByClassName("player-score").innerHTML = `${playerOneScore}`
         gameLogic();
         playerOne = false;
     } else {
-        // alert("It is player two's turn.");
         playerTwoScore += randomRoll;
         console.log(randomRoll);
         playerTwoScore++
@@ -76,8 +73,6 @@ playerToggle = () => {
 }
 
 rollButton.addEventListener("click", () => {
-    // alert("Hello.")
-    // resetButton.style.visibility = 'hidden';
     playerToggle()
 })
 
@@ -86,7 +81,6 @@ resetButton.addEventListener("click", () => {
     gameRestart()
 })
 
-//add a hold function
 
 
 // above 20 wins
