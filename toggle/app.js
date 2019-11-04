@@ -58,7 +58,7 @@ playerToggle = () => {
         playerOneScore += randomRoll;
         console.log(randomRoll);
         playerOneScore++
-        document.getElementsByClassName("player-score").innerHTML = `${playerOneScore}`
+        document.getElementById("player-score").innerHTML = `${playerOneScore}`
         gameLogic();
         playerOne = false;
     } else {
@@ -66,7 +66,7 @@ playerToggle = () => {
         console.log(randomRoll);
         playerTwoScore++
         gameLogic();
-        document.getElementsByClassName("player-score").innerHTML = `${playerTwoScore}`
+        document.getElementById("player-2-score").innerHTML = `${playerTwoScore}`
         playerOne = true;
     }
     
